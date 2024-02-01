@@ -3,96 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twist</title>
+    <title>TWIST</title>
     <style>
         body {
-            font-family: 'Palatino', serif;
+            font-family: 'Garamond', serif;
             margin: 0;
-            padding: 5;
+            padding: 0;
             background-color: #E6E6FA;
-            color: #000000;
+            color: #8FBC8F; 
         }
 
-        header {
-            background-color: #FFFACD;
-            color: #000000;
+        header, footer {
+            background-color: #FFFACD; 
+            color: #8FBC8F;
             text-align: center;
             padding: 20px;
         }
 
-        nav {
-            background-color: #FFFACD;
-            padding: 50px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #000000;
-            text-decoration: none;
-            margin: 45px;
-            font-size: 18px;
-        }
-
         section {
-            padding: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 20px;
         }
 
-        article {
-            background-color: #ecf0f1;
-            border-radius: 10px;
+        .column {
+            flex: 0 0 23%; 
+            margin: 10px;
+            background-color: #34495e; 
             padding: 15px;
-            margin-bottom: 20px;
+            border-radius: 10px;
         }
 
-        .progress-container {
-            margin-bottom: 10px;
+        .html-column {
+            border: 5px solid #e74c3c; 
+        }
+ 		.css-column {
+            border: 15px solid #7FFFD4; 
+            padding: 10px; 
         }
 
-        progress {
-            width: 100%;
-            height: 20px;
-            border-radius: 50px;
-            background-color: #8A2BE2; 
+        .link-list {
+            list-style-type: none;
+            padding: 0;
         }
 
-        footer {
-            background-color: #e74c3c;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .link-list a {
+            text-decoration: none;
+            color: #ecf0f1;
+            transition: background-color 0.3s ease-in-out; 
         }
+
+        .link-list a:hover {
+        	color: #000000; 
+            background-color: #FFF0F5; 
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>TWIST</h1>
+        <h1> TWIST </h1>
     </header>
 
-<nav>
-        <a href="file:///C:/Users/otgom/Documents/GitHub/Omerpolicker.github.io/hw1.html" target= "_blank">Homework1</a>
-        <a href="file:///C:/Users/otgom/Documents/GitHub/Omerpolicker.github.io/hw2-3pigs.html" target= "_blank">Homework2</a>
-        <a href="file:///C:/Users/otgom/Documents/GitHub/Omerpolicker.github.io/hw3.html" target= "_blank">Homework3</a>
-        <a href="#">Homework 4</a>
-    </nav>
-    
- <section>
-        <article>
-            <h2>course progress</h2>
-            <div class="progress-container">
-                <label for="progress1">Progress:</label>
-                <progress id="progress1" value="50" max="100"></progress>
+    <section>
+        <div class="column">
+            <h2>HTML</h2>
+            <ul class="link-list">
+                <li><a href="Omerpolicker.github.io/hw1.html">Exercise 1</a></li>
+                <li><a href="Omerpolicker.github.io/hw2-3pigs.html">Exercise 2</a></li>
+                <li><a href="Omerpolicker.github.io/hw3.html">Exercise 3</a></li>
+            </ul>
+        </div>
+
+        <div class="column css-column">
+            <h2>CSS</h2>
+            <div class="border-example">
             </div>
-        </article>
+        </div>
 
-      
-    </section>
+        <div class="column">
+            <h2>Javascript</h2>
+        </div>
+
+        <div class="column">
+            <h2>External Links</h2>
+            <ul class="link-list">
+                <li><a href="https://www.tau.ac.il/~ehadas/twist/twist.html">Course Website</a></li>
+                <li><a href="http://www.csszengarden.com/">CSS Zen Garden</a></li>
+       		    <li><a href="https://translate.google.com/">Google Translate</a></li>
+                <li><a href="https://chat.openai.com/">Chat GPT</a></li> 
+                <li><a href="https://www.w3schools.com/">W3schools</a></li> 
+            </ul>
+        </div>
+
+        <section>
+          <article>
+              <h2>course progress</h2>
+              <div class="progress-container">
+                  <label for="progress1">Progress:</label>
+                  <progress id="progress1" value="50" max="100"></progress>
+              </div>
+          </article>
   
-
-
+        
+      </section>
+   
 </body>
 </html>
 
