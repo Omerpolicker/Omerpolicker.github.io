@@ -1,0 +1,92 @@
+body {
+  background-color: #80c39a;
+  font-family: Garamond, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+.poem-container {
+  position: relative;
+  width: 300px; /* Adjust container width as needed */
+  height: 300px; /* Adjust container height as needed */
+}
+
+.sprite-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px; /* Set the width of each frame */
+  height: 300px; /* Set the height of each frame */
+  background-image: url('sprite_egss.css'); /* Set the sprite sheet */
+  animation: play-sprite 20s steps(10) infinite; /* Adjust duration and steps as needed */
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.dorothy {
+    width: 50px;
+    height: 80px;
+ /*  Taken from here: http://openbookproject.net/thinkcs/python/english3e/_images/duke_spritesheet.png*/ 
+    background: url('duke_spritesheet.png') 0 0;
+    position: absolute;
+    top: 40px; /* Initial top position */
+    left: 50px; /* Initial left position */
+    /*transform: translate(-50%, -50%);*/
+    transition: left 4s, top 4s; /* Add transition for smooth movement */
+    animation: walkAnimation 1s steps(10) infinite;
+}
+
+@keyframes walkAnimation {
+    from { background-position: 0; }
+    to { background-position: -500px; }
+}
+.poem-line {
+  position: absolute;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.line1 { animation: scaleIn 5s ease 0s forwards; }
+.line2 { animation: rotateIn 5s ease 4s forwards; }
+.line3 { animation: fadeIn 5s ease 8s forwards; }
+.line4 { animation: shakeIn 5s ease 12s forwards; }
+.line5 { animation: fadeSlideIn 5s ease 16s forwards; }
+.line6 { animation: fadeIn 5s ease 20s forwards; }
+.line7 { animation: shakeIn 5s ease 24s forwards; }
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIn {
+  0% { opacity: 0; transform: rotate(-590deg); }
+  100% { opacity: 1; transform: rotate(0); }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(4); }
+}
+
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(10px); }
+}
+
+@keyframes shakeIn {
+  0% { opacity: 0; transform: translateX(-120px); }
+  50% { transform: translateX(148px); }
+  100% { opacity: 1; transform: translateX(10px); }
+}
+
+@keyframes play-sprite {
+  from { background-position: 0px; } /* Start from the first frame */
+  to { background-position: -3000px; } /* Move through the frames */
+}
