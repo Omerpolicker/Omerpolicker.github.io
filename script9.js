@@ -1,109 +1,91 @@
-const menuItems = document.querySelectorAll('.menu-item');
 const questions = document.querySelectorAll('.question');
-const answers = document.querySelectorAll('.answer');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
-const endBtn = document.createElement('button');
-endBtn.textContent = 'End';
-endBtn.style.display = 'none'; // Initially hide the End button
-document.querySelector('.navigation').appendChild(endBtn);
+const endBtn = document.getElementById('end');
 
 let currentQuestionIndex = 0;
-let scores = [0, 0, 0, 0, 0]; // Initialize scores for each question
+let score = 0; // Initialize the score to 0
 
-// Function to show only the active question
-function showQuestion(index) {
-  questions.forEach((question, idx) => {
-    if (idx === index) {
-      question.classList.add('active');
+function showQuestion(questionNumber) {
+  questions.forEach((question, index) => {
+    if (index === questionNumber) {
+      question.style.display = 'block';
     } else {
-      question.classList.remove('active');
+      question.style.display = 'none';
     }
   });
 }
 
-// Function to handle menu item clicks
-menuItems.forEach((menuItem, index) => {
-  menuItem.addEventListener('click', () => {
-    currentQuestionIndex = index;
-    showQuestion(index);
-  });
-});
-
-// Function to handle answer selection
-answers.forEach((answer, index) => {
-  answer.addEventListener('click', () => {
-    scores[currentQuestionIndex] = index + 1; // Store the selected answer (index + 1)
-    updateScores(); // Update scores display
-  });
-});
-
-// Function to update scores display
 function updateScores() {
-  answers.forEach((answer, index) => {
-    answer.style.backgroundColor = ''; // Reset background color for all answers
-    if (index === scores[currentQuestionIndex] - 1) {
-      answer.style.backgroundColor = 'lightgreen'; // Highlight selected answer
-    }
-  });
+  // No need to update scores individually, just update the total score
+  // Display logic for individual questions can remain the same
 }
 
-// Function to handle previous button click
+function allQuestionsAnswered() {
+  // Check if all questions are answered (at least one option selected)
+  return Array.from(questions[currentQuestionIndex].querySelectorAll('.answer')).some(answer => answer.checked);
+}
+
+function checkEndButtonVisibility() {
+  // Show or hide End button based on whether all questions are answered
+  endBtn.style.display = allQuestionsAnswered() ? 'block' : 'none';
+}
+
 prevBtn.addEventListener('click', () => {
   if (currentQuestionIndex > 0) {
     currentQuestionIndex--;
     showQuestion(currentQuestionIndex);
-    updateScores(); // Update scores display when navigating
+    checkEndButtonVisibility(); // Check visibility of End button when navigating
   }
 });
 
-// Function to handle next button click
 nextBtn.addEventListener('click', () => {
   if (currentQuestionIndex < questions.length - 1) {
     currentQuestionIndex++;
     showQuestion(currentQuestionIndex);
-    updateScores(); // Update scores display when navigating
+    checkEndButtonVisibility(); // Check visibility of End button when navigating
   }
 });
 
-// Function to handle End button click
 endBtn.addEventListener('click', () => {
-  let totalScore = scores.reduce((acc, score) => acc + score, 0); // Calculate total score
-  let result = '';
+  // Calculate total score
+  score = calculateScore();
+  // Display result
+  displayResult(score);
+});
 
-  // Determine result based on total score
-  if (totalScore <= 5) {
-    result = 'You need to brush up on your knowledge!';
-  } else if (totalScore <= 10) {
-    result = 'Not bad, but you can do better!';
+// Function to calculate total score
+function calculateScore() {
+  let totalScore = 0;
+  questions.forEach((question, index) => {
+    const selectedAnswer = question.querySelector('.answer:checked');
+    const correctAnswerIndex = parseInt(question.dataset.correctAnswer);
+    if (selectedAnswer && parseInt(selectedAnswer.value) === correctAnswerIndex) {
+      totalScore++; // Increment total score for each correct answer
+    }
+  });
+  return totalScore;
+}
+
+// Function to display result
+function displayResult(score) {
+  let result = '';
+  if (score <= 0) {
+    result = 'I expected more from you :(';
+  } else if (score <= 1) {
+    result = 'You\'re not completely terrible!';
   } else {
-    result = 'Congratulations! You are a Silly Laws expert!';
+    result = 'You are an expert of Silly Laws!';
   }
 
-  // Display result
   const resultDiv = document.createElement('div');
-  resultDiv.textContent = `Total Score: ${totalScore}. ${result}`;
+  resultDiv.textContent = `Total Score: ${score}. ${result}`;
   document.body.appendChild(resultDiv);
 
-  // Hide the End button
+  // Hide the End button after displaying result
   endBtn.style.display = 'none';
-});
-
-// Check if all questions are answered
-function allQuestionsAnswered() {
-  return scores.every(score => score > 0);
 }
 
-// Check if any answer is selected and show the End button accordingly
-function checkEndButtonVisibility() {
-  if (allQuestionsAnswered()) {
-    endBtn.style.display = 'block';
-  } else {
-    endBtn.style.display = 'none';
-  }
-}
-
-// Update End button visibility when answer is selected
-answers.forEach(answer => {
-  answer.addEventListener('click', checkEndButtonVisibility);
-});
+// Initial display of first question
+showQuestion(currentQuestionIndex);
+checkEndButtonVisibility(); // Check visibility of End button initially

@@ -16,54 +16,56 @@
       <li class="menu-item" data-target="page4">Question 4</li>
       <li class="menu-item" data-target="page5">Question 5</li>
     </ul>
-    <div class="question active" id="page1">
+    <div class="question active" id="page1" data-correct-answer="2">
       <h2>It was illegal to change a light bulb unless you were a licensed electrician in</h2>
       <p>Choose an answer:</p>
       <form id="form1">
-        <input type="checkbox" name="answer" value="Answer 1"> Australia <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Israel <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Morocco <br>
+        <input type="radio" class="answer" name="answer" value="2"> Australia <br>
+        <input type="radio" class="answer" name="answer" value="0"> Israel <br>
+        <input type="radio" class="answer" name="answer" value="0"> Morocco <br>
     </form>
     </div>
-    <div class="question" id="page2">
+    <div class="question active" id="page2" data-correct-answer="2">
       <h2>It’s a legal requirement to smile at all times except at funerals or hospitals</h2>
       <p>Choose an answer:</p>
       <form id="form1">
-        <input type="checkbox" name="answer" value="Answer 1"> Canada <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Russia <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Italy <br>
+        <input type="radio" class="answer" name="answer" value="0">Canada <br>
+        <input type="radio" class="answer" name="answer" value="0"> Russia <br>
+        <input type="radio" class="answer" name="answer" value="2"> Italy <br>
     </form>
     </div>
-    <div class="question" id="page3">
+    <div class="question active" id="page3" data-correct-answer="2">
       <h2>You must let anyone use your toilet if they ask in</h2>
       <p>Choose an answer:</p>
       <form id="form1">
-        <input type="checkbox" name="answer" value="Answer 1"> Jordan <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Scotland <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Zimbabwe <br>
+        <input type="radio" class="answer" name="answer" value="0"> Jordan <br>
+        <input type="radio" class="answer" name="answer" value="2"> Scotland <br>
+        <input type="radio" class="answer" name="answer" value="0"> Zimbabwe <br>
     </form>
     </div>
-    <div class="question" id="page4">
+    <div class="question active" id="page4" data-correct-answer="2">
       <h2>It’s illegal to forget your wife’s birthday in </h2>
       <p>Choose an answer:</p>
       <form id="form1">
-        <input type="checkbox" name="answer" value="Answer 1"> Samoa <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Brazil <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Kenya <br>
+        <input type="radio" class="answer" name="answer" value="2"> Samoa <br>
+        <input type="radio" class="answer" name="answer" value="0"> Brazil <br>
+        <input type="radio" class="answer" name="answer" value="0"> Kenya <br>
     </form>
     </div>
-    <div class="question" id="page5">
+    <div class="question active" id="page5" data-correct-answer="2">
       <h2>It's Illegal to Hike Without Clothes in</h2>
       <p>Choose an answer:</p>
       <form id="form1">
-        <input type="checkbox" name="answer" value="Answer 1"> India <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Argentina <br>
-        <input type="checkbox" name="answer" value="Answer 1"> Switzerland <br>
+        <input type="radio" class="answer" name="answer" value="0"> India <br>
+        <input type="radio" class="answer" name="answer" value="0"> Argentina <br>
+        <input type="radio" class="answer" name="answer" value="2"> Switzerland <br>
     </form>
     </div>
     <div class="navigation">
       <button id="prev">Previous</button>
       <button id="next">Next</button>
+      <button id="end" style="display: none;">End</button>
+
     </div>
   </div>
 

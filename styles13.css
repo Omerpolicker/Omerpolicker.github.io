@@ -1,0 +1,87 @@
+/* styles13.css */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+
+body {
+    font-family:  Georgia, Times, Times New Roman, serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url("https://i.pinimg.com/originals/5d/38/a4/5d38a4decdec39fbb4b121befc46255c.png");
+    background-repeat: flex;
+    background-size: 1549px 5976p;
+    position: stretch;
+}
+
+h1 {
+    font-family: 'Sofia', sans-serif;
+}
+
+h2 {
+    font-family: 'Sofia', sans-serif;
+}
+
+#story-text {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+#inventory {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: fixed; /* Position the inventory box relative to the viewport */
+    top: 20px; /* Adjust the top distance from the top edge */
+    right: 20px; /* Adjust the right distance from the right edge */
+}
+
+#inventory h2 {
+    margin-top: 0;
+}
+
+#inventory-list {
+    list-style: none;
+    padding: 0;
+}
+
+#inventory-list li {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#inventory-list li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+button {
+    background-color: transparent; /* Set background color to transparent */
+    color: white; /* Text color */
+    width: 100px; /* Adjust button width */
+    height: 100px; /* Adjust button height */
+    font-family:  'Sofia', sans-serif;
+    font-size: 20px; /* Adjust font size */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add pointer cursor */
+    transition-duration: 0.4s;
+    display: flex; /* Use flexbox to center text vertically and horizontally */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+}
+
+button img {
+    width: 1000%; /* Make the image fill the button */
+    height: 100%; /* Make the image fill the button */
+    pointer-events: none; /* Make sure the button click triggers are not on the image */
+}
+
+button:hover {
+  background-color: #6d0202; 
+  width: 200px; /* Adjust button width */
+  color: rgb(0, 0, 0);
+  }
