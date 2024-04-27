@@ -8,85 +8,76 @@
 </head>
 
 <body>
+    <h1>Three Little Pigs - The Game</h1>
+    <h3>
+        In this game, you will be playing as the big bad wolf. Your goal is to blow all the piggies houses and collect their materials. Good Luck!
+    </h3>
     <div id="story-text">
-        <div id="story-text">
-            <h1>Three Little Pigs - The Game</h1>
-            <p>
-                Once upon a time there were three little pigs and when they were old enough, they went out into the world to seek their fortunes.
-            </p>
-            <p>
-                The first little pig was very lazy. He didn't want to work at all and he built his house out of straw.
-            </p>
-            <p>
-                The second little pig worked a little bit harder but he was lazy too and he built his house out of sticks.
-            </p>
-            <p>
-                The third little pig worked hard all day and built his house with bricks. It was a sturdy house complete with a fine fireplace and chimney.
-            </p>
-            <h2>
-                Choose which pig you want to visit:
-            </h2>
-            <button onclick="visitPig(1)">
-                <img src="https://cdn.britannica.com/71/218371-050-CD9A0634/Muppets-Miss-Piggy-1982.jpg" alt="Pig 1">
-                Pig 1
-            </button>
-            <button onclick="visitPig(2)">
-                <img src="https://cdn-images.vetstreet.com/d0/5d/2dae50d545429ce664f8a9ec46ec/Hamm-from-Toy-Story-MSDTOST_EC046_H-590lc021913.jpg" alt="Pig 2">
-                Pig 2
-            </button>
-            </div>
-        <!-- Hidden part of the story -->
-        <div id="hidden-story" style="display: none;">
-            <p>
-                The next day, a wolf passed by the three little pigs' houses. So he knocked on the door of <span id="chosen-pig"></span> and said:
-            </p>
-            <p>
-                "If you don't let me in!
-                Then I'll huff
-                and I'll puff
-                and I'll blow your house down."
-            </p>
-            <p>
-                So he huffed and he puffed and he blew the house down and then ate <span id="chosen-pig-eaten"></span>.
-            </p>
-            <p>
-                The wolf continued down the street and he passed by <span id="unchosen-pig"></span>'s house. He smelled the pigs and his mouth began to water.
-            </p>
-        <p>
-            So he knocked on the door and said:
-        </p>
-        <p>
-            "If you don't let me in!
-            Then I'll huff
-            and I'll puff
-            and I'll blow your house down."
-        </p>
-        <p>
-            The pig said "no way!" So the wolf huffed and he puffed and he blew the house down and then ate <span id="unchosen-pig"></span>.
-        </p>
-        <p>
-            The wolf had worked up a large appetite chasing the pigs around and now he could smell pig 3 inside his brick home. So he knocked on the door of pig 3 and said:
-        </p>
-        <p>
-            "If you don't let me in!
-            Then I'll huff
-            and I'll puff
-            and I'll blow your house down."
-        </p>
-        <p>
-            The pig said "get lost evil wolf!"
-        </p>
-        <p>
-            So, the wolf huffed and he puffed. He puffed and he huffed. And he huffed, huffed, and he puffed, puffed; but he could not blow the house down. At last, he was so out of breath that he couldn't huff and he couldn't puff anymore.
-        </p>
-                
 
+        <p>Once upon a time there were three little pigs and when they were old enough, they went out into the world to seek their fortunes.</p>
+       
+        <p>The first little pig was very lazy. He didn't want to work at all and he built his house out of straw.</p>
+        <p>The second little pig worked a little bit harder but he was lazy too and he built his house out of sticks.</p>
+        <p>The third little pig worked hard all day and built his house with bricks. It was a sturdy house complete with a fine fireplace and chimney.</p>
         
-        <div id="inventory">
-            <h2>Inventory</h2>
-            <ul id="inventory-list">
-        </div>
+        <h2>Choose which pig you want to visit:</h2>
   
+        <button onclick="visitPig(1)">
+            <img src="https://i.etsystatic.com/14036568/r/il/0675f9/3407921765/il_fullxfull.3407921765_cf6n.jpg" alt="Pig 1">
+            Pig 1
+        </button>
+        <button onclick="visitPig(2)">
+            <img src="https://premiumpaintbynumbers.com/wp-content/uploads/2022/04/aesthetic-Pig-with-watermelon-paint-by-number.jpg" alt="Pig 2">
+            Pig 2
+        </button>
+    </div>
+
+    <!-- Hidden part of the story -->
+    <div id="hidden-story" class="hidden-story">
+        <p>The next day, a wolf passed by the three little pigs' houses. So he knocked on the door of <span id="chosen-pig"></span> and said:</p>
+        <p>"If you don't let me in!
+            Then I'll huff
+            and I'll puff
+            and I'll blow your house down."</p>
+        <p>So he huffed and he puffed and he blew the house down and then ate <span id="chosen-pig-eaten"></span>.</p>
+        <p>The wolf continued down the street and he passed by <span id="unchosen-pig"></span>'s house. He smelled the pigs and his mouth began to water.</p>
+        <p>So he knocked on the door and said:</p>
+        <p>"If you don't let me in!
+            Then I'll huff
+            and I'll puff
+            and I'll blow your house down."</p>
+        <h2>The pig said "no way!"</h2>  
+        <p>Click to huff and puff <span id="unchosen-pig"></span>:</p>
+        <div id="unchosen-pig-button-placeholder"></div>
+    </div>
+     
+    <div id="hidden-story2" class="hidden-story2" style="display: none;">
+        <p>So the wolf huffed and he puffed and he blew the house down and then ate <span id="unchosen-pig"></span>.</p>
+        <p>The wolf had worked up a large appetite chasing the pigs around and now he could smell pig 3 inside his brick home. So he knocked on the door of pig 3 and said:</p>
+        <p>"If you don't let me in!
+            Then I'll huff
+            and I'll puff
+            and I'll blow your house down."</p>
+        <p>The pig said "get lost evil wolf!"</p>
+
+        <h2>Slide to huff and puff!</h2>
+
+        <div class="slider">
+            <input type="range" min="1" max="100" value="1">
+        </div>
+            </div>
+
+    <div id="hidden-story3" class="hidden-story3" style="display: none;">
+        <p>So, the wolf huffed and he puffed. He puffed and he huffed. And he huffed, huffed, and he puffed, puffed; </p>
+        <p>But he could not blow the house down. At last, he was so out of breath that he couldn't huff and he couldn't puff anymore. </p>
+        <p>Pig 3 was safe and the wolf went to nap.</p>
+        <p> The End.</p>
+    </div>
+
+    <div id="inventory">
+        <h2>Inventory</h2>
+        <ul id="inventory-list"></ul>
+    </div>
 
     <script src="script13.js"></script>
 </body>
