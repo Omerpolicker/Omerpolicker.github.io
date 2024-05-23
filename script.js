@@ -1,11 +1,25 @@
-// script.js
-console.log("Script loaded"); // Check script load
+document.addEventListener('DOMContentLoaded', () => {
+    const dorothy = document.getElementById('dorothy');
+    const buttons = document.querySelectorAll('.move-button');
 
-function divClicked() {
-    alert("Div clicked"); // Ensure function runs
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const target = event.target;
+            const targetPosition = target.getBoundingClientRect();
+            const dorothyPosition = dorothy.getBoundingClientRect();
 
-    var dorothyDiv = document.getElementById('dorothy'); // Get the dorothy div
-    dorothyDiv.style.left = '300px'; // Change left attribute
-    dorothyDiv.style.top = '400px'; // Change top attribute
-}
+            const container = document.getElementById('container');
+            const containerRect = container.getBoundingClientRect();
 
+            let newLeft = targetPosition.left - containerRect.left + (targetPosition.width / 2) - (dorothyPosition.width / 2);
+            let newTop = targetPosition.top - containerRect.top + (targetPosition.height / 2) - (dorothyPosition.height / 2);
+
+            dorothy.style.left = `${newLeft}px`;
+            dorothy.style.top = `${newTop}px`;
+
+            setTimeout(() => {
+                window.location.href = target.dataset.target;
+            }, 600); // Delay to allow for the movement animation
+        });
+    });
+});
