@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dorothy Walking Animation</title>
+</head>
+<body onload="shalom()">
+
+<div class="dorothy"></div>
+
+<span onclick="justShowOne()">One</span>
+<span onclick="justShowTwo()">Two</span>
+<span onclick="justShowThree()">Three</span>
+
+<div id="One">Div One</div>
+<div id="Two">Div Two</div>
+<div id="Three">Div Three</div>
+<br>
+<div id="next">next</div>
+
+<script src="script.js"></script>
+
+<script>
+    function divClicked() {
+        alert("DIV Clicked!");
+    }
+    
+    document.getElementById("dorothy").addEventListener("click", divClicked);
+</script>
+
+</body>
+</html>
