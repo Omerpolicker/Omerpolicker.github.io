@@ -86,16 +86,20 @@ h1 {
 
 
 #dorothy {
-    width: 66px; 
-    height: 72px; 
-    background-image: url('footage/idle2.png');
+    width:66px;
+    height: 72px;
     position: absolute;
     top: 70%;
     left: 20%;
+    background: url(footage/idle2.png) 0 0;
+    animation: dorothyAnimation 1s steps(16) infinite;
     transform: translate(-50%, -50%);
-    transition: left 3s, top 3s;
-    animation: sprite-animation 1s steps(16) infinite; 
-    z-index: 2; /* Ensure Dorothy is on top of other elements */
+    transition: top 1s, left 1s;
+}
+
+@keyframes dorothyAnimation {
+    0% {background-position: 0 0;}
+    100% {background-position: -1056px 0;}
 }
 
 .container {

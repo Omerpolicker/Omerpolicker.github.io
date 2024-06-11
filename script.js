@@ -23,3 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function IdleAnimation (){
+    var dorothy = document.getElementById("dorothy");
+    dorothy.style.background= "url('footage/idle2.png')";
+    dorothy.style.animation = "dorothyAnimation 2s steps(16) infinite";
+
+    console.log("test");
+
+}

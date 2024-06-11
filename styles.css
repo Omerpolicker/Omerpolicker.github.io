@@ -16,14 +16,20 @@ body, html {
 }
 
 #dorothy {
-    width: 66px; 
-    height: 72px; 
-    background-image: url('footage/idle2.png');
+    width:66px;
+    height: 72px;
     position: absolute;
     top: 90%;
     left: 50%;
+    background: url(footage/idle2.png) 0 0;
+    animation: dorothyAnimation 1s steps(16) infinite;
     transform: translate(-50%, -50%);
     transition: top 1s, left 1s;
+}
+
+@keyframes dorothyAnimation {
+    0% {background-position: 0 0;}
+    100% {background-position: -1056px 0;}
 }
 
 .move-button {
